@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fz8i4lwOPF/e4difghXvR0Uo7Uj0VafZhkUMWuVGwxL/PmvYO0XKbG01lAUAu726QUDOghWnBEg4lNwLJ1HrPg==",
+  "dgSpecHash": "utXEBJUbgSobP/Q5n6pNDLVqybjaCVr7RJ/CAH5mfdHoYmqfuISbP2fY/x6J7LxGp7QfFEEOYi5ZVdyPiC8M3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

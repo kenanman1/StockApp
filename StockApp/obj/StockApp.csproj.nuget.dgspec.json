@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\StockApp.csproj": {}
+    "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\StockApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\source\\repos\\StockApp\\DataBase\\DataBase.csproj": {
+    "C:\\Users\\USER\\Source\\Repos\\StockProgram\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\StockApp\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\DataBase\\DataBase.csproj",
+        "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\DataBase\\DataBase.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\StockApp\\DataBase\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj"
+              "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj": {
+    "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -150,14 +150,14 @@
         }
       }
     },
-    "C:\\Users\\USER\\source\\repos\\StockApp\\Repository\\Repository.csproj": {
+    "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\StockApp\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\StockApp\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -179,11 +179,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\USER\\source\\repos\\StockApp\\DataBase\\DataBase.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\DataBase\\DataBase.csproj"
+              "C:\\Users\\USER\\Source\\Repos\\StockProgram\\DataBase\\DataBase.csproj": {
+                "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\DataBase\\DataBase.csproj"
               },
-              "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\Entities\\Entities.csproj"
+              "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Entities\\Entities.csproj"
               }
             }
           }
@@ -223,14 +223,14 @@
         }
       }
     },
-    "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\StockApp.csproj": {
+    "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\StockApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\StockApp.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\StockApp.csproj",
         "projectName": "StockApp",
-        "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\StockApp.csproj",
+        "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\StockApp.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -252,8 +252,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\USER\\source\\repos\\StockApp\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\USER\\source\\repos\\StockApp\\Repository\\Repository.csproj"
+              "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Repository\\Repository.csproj"
               }
             }
           }

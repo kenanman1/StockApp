@@ -1,15 +1,15 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\JavaScript.js",
+      "Id": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\JavaScript.js",
       "PackagePath": "staticwebassets\\JavaScript.js"
     },
     {
-      "Id": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Id": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
       "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
     },
     {
-      "Id": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\StyleSheet.css",
+      "Id": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },
     {

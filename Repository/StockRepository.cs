@@ -6,7 +6,7 @@ namespace Repository;
 
 public class StockRepository : IStockRepository
 {
-    private StockDbContext _dbContext;
+    private StockDbContext _dbContext; 
 
     public StockRepository(StockDbContext dbContext)
     {

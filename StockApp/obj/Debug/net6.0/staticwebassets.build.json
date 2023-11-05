@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+7h2znUjq4ASA28UCfAmxKePhg7VLy/4BMYwiG+60cU=",
+  "Hash": "U8RbmnH4GJSsCt59qhGMcXuhntq8bJijMxGKA4H0m8A=",
   "Source": "StockApp",
   "BasePath": "_content/StockApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "StockApp\\wwwroot",
       "Source": "StockApp",
-      "ContentRoot": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\",
       "BasePath": "_content/StockApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\JavaScript.js",
+      "Identity": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\JavaScript.js",
       "SourceId": "StockApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\",
       "BasePath": "_content/StockApp",
       "RelativePath": "JavaScript.js",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\JavaScript.js"
     },
     {
-      "Identity": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Identity": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
       "SourceId": "StockApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\",
       "BasePath": "_content/StockApp",
       "RelativePath": "Rotativa/wkhtmltopdf.exe",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltopdf.exe"
     },
     {
-      "Identity": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\StyleSheet.css",
+      "Identity": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\StyleSheet.css",
       "SourceId": "StockApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\StockApp\\wwwroot\\",
       "BasePath": "_content/StockApp",
       "RelativePath": "StyleSheet.css",
       "AssetKind": "All",
