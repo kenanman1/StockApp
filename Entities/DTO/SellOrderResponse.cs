@@ -25,21 +25,4 @@ public class SellOrderResponse
             TradeAmount = Math.Round(order.Price * order.Quantity, 4)
         };
     }
-
-    public override bool Equals(object? obj)
-    {
-       
-        if (obj == null || GetType() != obj.GetType())
-        {
-            return false;
-        }
-
-        SellOrderResponse sellOrderResponse = (SellOrderResponse)obj;
-        return sellOrderResponse.Guid == Guid &&
-            sellOrderResponse.StockSymbol == StockSymbol &&
-            sellOrderResponse.StockName == StockName &&
-            sellOrderResponse.DateTime == DateTime &&
-            sellOrderResponse.Quantity == Quantity &&
-            sellOrderResponse.Price == Price;
-    }
 }
