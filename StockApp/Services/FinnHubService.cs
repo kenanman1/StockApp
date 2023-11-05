@@ -6,7 +6,7 @@ namespace StockApp.Services;
 
 public class FinnHubService : IFinnHubService
 {
-    private IFinnHubRepository _finnhubRepository;    
+    private IFinnHubRepository _finnhubRepository;     
     private IConfiguration _configuration;
 
     public FinnHubService(IConfiguration configuration, IFinnHubRepository finnhubRepository)

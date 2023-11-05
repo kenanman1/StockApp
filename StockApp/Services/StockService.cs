@@ -12,7 +12,7 @@ public class StockService : IStockService
     {
         this.dbContext = dbContext;
     }
-    public async Task<BuyOrderResponse> CreateBuyOrderAsync(BuyOrderRequest? buyOrderRequest)
+    public async Task<BuyOrderResponse> CreateBuyOrderAsync(BuyOrderRequest? buyOrderRequest) 
     {
         if (buyOrderRequest == null)
         {
