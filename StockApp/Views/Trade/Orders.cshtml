@@ -1,0 +1,50 @@
+﻿@model Orders
+@section Breadcrumb{
+    <li class="breadcrumb-item active" aria-current="page">Orders</li>
+}
+<div class="row m-0">
+    <div class="container border border-3 rounded-3 mt-4" id="buy-orders">
+        <span class="text-secondary m-3">Buy Orders</span>
+
+        @foreach (BuyOrderResponse buyOrder in Model.BuyOrders)
+        {
+            <ul class="mt-4">
+                <li>
+                    <strong>@buyOrder.StockName (@buyOrder.StockSymbol)</strong>
+                </li>
+                <li>
+                    @buyOrder.Quantity Shares at <strong>$@buyOrder.Price</strong>
+                </li>
+                <li>
+                    Trade Amount: <strong>$@buyOrder.TradeAmount</strong>
+                </li>
+                <li>
+                    @buyOrder.DateTime
+                </li>
+            </ul>
+            <hr />
+        }
+    </div>
+    <div class="container border border-3 rounded-3 mt-4" id="buy-orders">
+        <span class="text-secondary m-3">Sell Orders</span>
+
+        @foreach (SellOrderResponse sellOrder in Model.SellOrders)
+        {
+            <ul class="mt-4">
+                <li>
+                    <strong>@sellOrder.StockName (@sellOrder.StockSymbol)</strong>
+                </li>
+                <li>
+                    @sellOrder.Quantity Shares at <strong>$@sellOrder.Price</strong>
+                </li>
+                <li>
+                    Trade Amount: <strong>$@sellOrder.TradeAmount</strong>
+                </li>
+                <li>
+                    @sellOrder.DateTime
+                </li>
+            </ul>
+            <hr />
+        }
+    </div>
+</div>

@@ -1,0 +1,17 @@
+C:\Users\USER\source\repos\StockApp\Repository\bin\Debug\net6.0\Repository.deps.json
+C:\Users\USER\source\repos\StockApp\Repository\bin\Debug\net6.0\Repository.dll
+C:\Users\USER\source\repos\StockApp\Repository\bin\Debug\net6.0\Repository.pdb
+C:\Users\USER\source\repos\StockApp\Repository\bin\Debug\net6.0\Entities.dll
+C:\Users\USER\source\repos\StockApp\Repository\bin\Debug\net6.0\Entities.pdb
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.dll
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\refint\Repository.dll
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\Repository.pdb
+C:\Users\USER\source\repos\StockApp\Repository\obj\Debug\net6.0\ref\Repository.dll
+C:\Users\USER\source\repos\StockApp\Repository\bin\Debug\net6.0\DataBase.dll
+C:\Users\USER\source\repos\StockApp\Repository\bin\Debug\net6.0\DataBase.pdb

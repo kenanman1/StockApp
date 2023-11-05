@@ -1,0 +1,28 @@
+﻿@model StockInfo
+@section Breadcrumb{
+    <li class="breadcrumb-item active mb-3" aria-current="page">ExploreSymbol</li>
+}
+<div class="d-flex justify-content-center w-75 flex" id="explore">
+    <div class="container  border border-3 rounded-3 mb-3 p-3" id="multi-column-container">
+    @foreach (var item in ViewBag.AllStocks)
+    {
+            <div class="bg-white multi-column-item ">
+                <p class="p-1"><strong><a href="@item.StockSymbol">@item.StockName</a></strong> <br>@item.StockSymbol</p>
+            </div>
+    }
+    </div>
+    <div class="border border-3 rounded-3 d-flex flex-column align-items-center justify-content-center mb-3" id="explore-info">
+        <img class="p-3 company-logo" src="@Model.Logo" />
+        <p class="p-3"><strong>@Model.StockName (@Model.StockSymbol)</strong></p>
+        <p class="p-3 bg-secondary text-white rounded-3" style="margin-left:13px; width:200px;">Industry: @Model.Industry</p>
+        <p class="p-3" style="font-size:larger"><strong>$ @Model.Price</strong></p>
+        <p class="p-3"><a href="@Model.WebUrl" target="_blank">@Model.WebUrl</a></p>
+        <button class="btn btn-success" style="margin-left:15px;" onclick="tradeStock('@Model.StockSymbol')">Trade</button>
+    </div>
+</div>
+
+<script>
+    function tradeStock(stockSymbol) {
+        window.location.href = '/index/' + stockSymbol;
+    }
+</script>

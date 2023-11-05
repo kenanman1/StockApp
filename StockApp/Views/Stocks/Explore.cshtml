@@ -1,0 +1,14 @@
+﻿@model List<Stock>
+@section Breadcrumb{
+    <li class="breadcrumb-item active mb-3" aria-current="page">Explore</li>
+}
+<div class="d-flex justify-content-center w-75 flex-column">
+    <div class="container  border border-3 rounded-3 mb-3 p-3" id="multi-column-container" ">
+    @foreach (var item in Model)
+    {
+            <div class="bg-white multi-column-item ">
+                <p class="p-1"><strong><a href="/Stocks/Exploresymbol/@item.StockSymbol">@item.StockName</a></strong> <br>@item.StockSymbol</p>
+            </div>
+    }
+    </div>
+</div>

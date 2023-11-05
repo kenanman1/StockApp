@@ -1,0 +1,45 @@
+﻿@model Orders
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+<div class="row justify-content-center table-div" id="table-div">
+    <table class="table table-responsive table-hover table-bordered my-table" style="margin-top:200px;">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Date and Time</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Order type</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Trade Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.BuyOrders)
+            {
+                <tr class="table-success">
+                    <td style="width:15%;"><span style="margin-left:10px;">@order.DateTime</span></td>
+                    <td style="width:15%">@order.StockName</td>
+                    <td style="width:10%">Buy Order</td>
+                    <td style="width:5%">@order.Quantity</td>
+                    <td style="width:10%">$ @order.Price</td>
+                    <td style="width:15%">@order.TradeAmount</td>
+                </tr>
+            }
+            @foreach (var order in Model.SellOrders)
+            {
+                <tr class="table-success">
+                    <td style="width:15%;"><span style="margin-left:10px;">@order.DateTime</span></td>
+                    <td style="width:15%">@order.StockName</td>
+                    <td style="width:10%">Sell Order</td>
+                    <td style="width:5%">@order.Quantity</td>
+                    <td style="width:10%">$ @order.Price</td>
+                    <td style="width:15%">@order.TradeAmount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

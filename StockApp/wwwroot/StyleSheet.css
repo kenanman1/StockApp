@@ -1,0 +1,149 @@
+﻿#div-index {
+    margin-top: 50px;
+}
+
+#multi-column-container a {
+    text-decoration: none;
+}
+
+p a {
+    text-decoration: none;
+}
+
+#explore-info p{
+    word-wrap: break-word;
+}
+
+#multi-column-container {
+    margin-left: 100px;
+    width: 1000px;
+}
+
+#price {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.stock-info {
+    height: 250px;
+}
+
+#buy-orders {
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+@media(min-width:1259px) {
+    #multi-column-container {
+        width: 50%;
+    }
+
+    #explore-info {
+        height: 550px;
+        width: 450px;
+        margin-left: 50px;
+    }
+
+    .search-info {
+        height: 650px;
+        margin: auto;
+        margin-top: 50px;
+        width: 60%;
+    }
+
+        .search-info div {
+            margin-left: 50px;
+        }
+
+    .company-logo {
+        width: 150px;
+    }
+}
+
+@media(min-width:768px) and (max-width:1258px) {
+    #multi-column-container {
+        width: 100%;
+    }
+
+    #explore-info {
+        height: 550px;
+        margin-left: 100px;
+        width: 100%;
+    }
+
+    .search-info {
+        height: 650px;
+        margin: auto;
+        margin-top: 50px;
+        width: 60%;
+    }
+}
+
+@media(max-width:767px) {
+    .stock-info {
+        height: 500px;
+    }
+
+    #div-index {
+        margin-top: 0;
+        height: 200px;
+    }
+
+    #my-width-90 {
+        width: 90%;
+    }
+
+    #buy-orders {
+        width: 180px;
+    }
+
+    #explore {
+        flex-direction: column-reverse;
+    }
+
+    #multi-column-container {
+        width: 70%;
+    }
+
+    #explore-info {
+        height: 550px;
+        margin-left: 100px;
+        width: 70%;
+    }
+
+    .search-info {
+        height: 650px;
+        margin: auto;
+        margin-top: 50px;
+        width: 60%;
+    }
+}
+
+@media(max-width:600px) {
+    #multi-column-container {
+        margin-left: 42px;
+        width: 110%;
+    }
+
+    #explore-info {
+        height: 550px;
+        margin-left: 42px;
+        width: 110%;
+    }
+
+    .search-info {
+        height: 650px;
+        margin: auto;
+        margin-top: 50px;
+        width: 90%;
+    }
+}
+
+@media(max-width:450px){
+    #explore-info {
+        margin-left: 33px;
+    }
+    #multi-column-container {
+        margin-left: 33px;
+    }
+}
