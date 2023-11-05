@@ -9,7 +9,7 @@ using StockApp.Services;
 namespace StockApp.Controllers;
 
 [ModelValidationActionFilter]
-public class TradeController : Controller
+public class TradeController : Controller 
 { 
     private IFinnHubService _finnHubService;
     private IStockService _stockService;
