@@ -9,49 +9,49 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = StockApp
 build_property.RootNamespace = StockApp
-build_property.ProjectDir = C:\Users\USER\Source\Repos\StockProgram\StockApp\
+build_property.ProjectDir = C:\Users\USER\source\repos\StockApp\StockApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\USER\Source\Repos\StockProgram\StockApp
+build_property.MSBuildProjectDirectory = C:\Users\USER\source\repos\StockApp\StockApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Home/Error.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Home/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Shared/_Layout.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Stocks/Explore.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Stocks/Explore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tzXEV4cGxvcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Stocks/ExploreSymbol.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Stocks/ExploreSymbol.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tzXEV4cGxvcmVTeW1ib2wuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Stocks/Search.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Stocks/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvY2tzXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Trade/Index.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Trade/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Trade/Orders.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Trade/Orders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcT3JkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/Trade/OrdersToPdf.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Trade/OrdersToPdf.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZGVcT3JkZXJzVG9QZGYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/_ViewImports.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Source/Repos/StockProgram/StockApp/Views/_ViewStart.cshtml]
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6Fz6SoW5ALYjvVEGvedPxS6LgqIuUNMJcmuFz8l/MJcQt36x2SMvl6XKNyoXw7dGRVIa4/bz9GAF8qD5oGDUkw==",
+  "dgSpecHash": "nYAqk6CvnWxtJx768R05RhI4CxGLsy9epR70jCHzgrjgVmrfojGscdxUbuSldTPklAzkHCUXqpwwtRtr+W0ljQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Source\\Repos\\StockProgram\\Repository\\Repository.csproj",
+  "projectFilePath": "C:\\Users\\USER\\source\\repos\\StockApp\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
