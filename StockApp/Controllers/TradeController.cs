@@ -10,7 +10,7 @@ namespace StockApp.Controllers;
 
 [ModelValidationActionFilter]
 public class TradeController : Controller
-{
+{ 
     private IFinnHubService _finnHubService;
     private IStockService _stockService;
     public TradeController(IFinnHubService finnHubService, IStockService stockService)
