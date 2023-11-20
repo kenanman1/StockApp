@@ -18,7 +18,7 @@ public class StocksController : Controller
     [Route("[action]")]
     public async Task<IActionResult> Explore()
     {
-        List<Stock> stocks = await _finnHubService.GetStocks(true);
+        List<Stock> stocks = await _finnHubService.GetStocks();
         return View(stocks);
     }
 
