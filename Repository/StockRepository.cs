@@ -6,7 +6,7 @@ namespace Repository;
 
 public class StockRepository : IStockRepository
 {
-    private StockDbContext _dbContext; 
+    private StockDbContext _dbContext;
 
     public StockRepository(StockDbContext dbContext)
     {
@@ -27,15 +27,27 @@ public class StockRepository : IStockRepository
         return sellOrder;
     }
 
-    public async Task<List<BuyOrder>> GetBuyOrdersAsync()
+    public async Task<List<BuyOrder>> GetBuyOrdersAsync(string? userId = null)
     {
-        List<BuyOrder> buyOrders = await _dbContext.BuyOrders.AsNoTracking().ToListAsync();
+        List<BuyOrder> buyOrders = new();
+        if (userId == null)
+        {
+            buyOrders = await _dbContext.BuyOrders.AsNoTracking().ToListAsync();
+            return buyOrders;
+        }
+        buyOrders = await _dbContext.BuyOrders.AsNoTracking().Where(p => p.UserId == userId).ToListAsync();
         return buyOrders;
     }
 
-    public async Task<List<SellOrder>> GetSellOrdersAsync()
+    public async Task<List<SellOrder>> GetSellOrdersAsync(string? userId = null)
     {
-        List<SellOrder> sellOrders = await _dbContext.SellOrders.AsNoTracking().ToListAsync();
+        List<SellOrder> sellOrders = new();
+        if (userId == null)
+        {
+            sellOrders = await _dbContext.SellOrders.AsNoTracking().ToListAsync();
+            return sellOrders;
+        }
+        sellOrders = await _dbContext.SellOrders.AsNoTracking().Where(p => p.UserId == userId).ToListAsync();
         return sellOrders;
     }
 }

@@ -1,4 +1,6 @@
-﻿using Repository;
+﻿using Entities.IdentityEntities;
+using Microsoft.AspNetCore.Identity;
+using Repository;
 using StockApp.DTO;
 using StockApp.Model;
 using System.ComponentModel.DataAnnotations;
@@ -7,12 +9,16 @@ namespace StockApp.Services;
 
 public class StockService : IStockService
 {
-    private IStockRepository dbContext;
-    public StockService(IStockRepository dbContext)
+    private IStockRepository _dbContext;
+    private UserManager<ApplicationUser> _userManager;
+    private IHttpContextAccessor _httpContextAccessor;
+    public StockService(IStockRepository dbContext, UserManager<ApplicationUser> userManager, IHttpContextAccessor httpContextAccessor)
     {
-        this.dbContext = dbContext;
+        _userManager = userManager;
+        _dbContext = dbContext;
+        _httpContextAccessor = httpContextAccessor;
     }
-    public async Task<BuyOrderResponse> CreateBuyOrderAsync(BuyOrderRequest? buyOrderRequest) 
+    public async Task<BuyOrderResponse> CreateBuyOrderAsync(BuyOrderRequest? buyOrderRequest)
     {
         if (buyOrderRequest == null)
         {
@@ -22,9 +28,12 @@ public class StockService : IStockService
         CheckValidation(buyOrderRequest);
 
         BuyOrder buyOrder = BuyOrder.ToBuyOrder(buyOrderRequest);
-        await dbContext.CreateBuyOrderAsync(buyOrder);
+        ApplicationUser user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
+        buyOrder.UserId = user.Id;
+        user.TotalOperationsCount++;
+        await _userManager.UpdateAsync(user);
+        await _dbContext.CreateBuyOrderAsync(buyOrder);
         return BuyOrderResponse.ToBuyOrderResponce(buyOrder);
-
     }
 
     public async Task<SellOrderResponse> CreateSellOrderAsync(SellOrderRequest? sellOrderRequest)
@@ -37,21 +46,27 @@ public class StockService : IStockService
         CheckValidation(sellOrderRequest);
 
         SellOrder sellOrder = SellOrder.ToSellOrder(sellOrderRequest);
-        await dbContext.CreateSellOrderAsync(sellOrder);
+        ApplicationUser user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
+        sellOrder.UserId = user.Id;
+        user.TotalOperationsCount++;
+        await _userManager.UpdateAsync(user);
+        await _dbContext.CreateSellOrderAsync(sellOrder);
         return SellOrderResponse.ToSellOrderResponce(sellOrder);
     }
 
     public async Task<List<BuyOrderResponse>> GetBuyOrdersAsync()
     {
-        List<BuyOrder> buyOrders = await dbContext.GetBuyOrdersAsync();
+        ApplicationUser user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
+        List<BuyOrder> buyOrders = await _dbContext.GetBuyOrdersAsync(user.Id);
         return buyOrders.Select(buyOrder => BuyOrderResponse.ToBuyOrderResponce(buyOrder)).ToList();
     }
-
     public async Task<List<SellOrderResponse>> GetSellOrdersAsync()
     {
-        List<SellOrder> sellOrders = await dbContext.GetSellOrdersAsync();
+        ApplicationUser user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
+        List<SellOrder> sellOrders = await _dbContext.GetSellOrdersAsync(user.Id);
         return sellOrders.Select(sellOrder => SellOrderResponse.ToSellOrderResponce(sellOrder)).ToList();
     }
+
 
     public void CheckValidation(object obj)
     {

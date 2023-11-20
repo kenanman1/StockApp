@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
 using Repository;
 using StockApp.Model;
+using System.Globalization;
 
 namespace StockApp.Services;
 
 public class FinnHubService : IFinnHubService
 {
-    private IFinnHubRepository _finnhubRepository;     
+    private IFinnHubRepository _finnhubRepository;
     private IConfiguration _configuration;
 
     public FinnHubService(IConfiguration configuration, IFinnHubRepository finnhubRepository)
@@ -24,7 +25,7 @@ public class FinnHubService : IFinnHubService
         return await _finnhubRepository.GetStockPriceQuote(stockSymbol);
     }
 
-    public async Task<List<Stock>> GetStocks(bool showOnlyPopular)
+    public async Task<List<Stock>> GetStocks()
     {
         List<Dictionary<string, string>> stocks = await _finnhubRepository.GetStocks();
         List<Stock> stockList = new();
@@ -33,11 +34,9 @@ public class FinnHubService : IFinnHubService
             Dictionary<string, string> stock = stocks[i];
             stockList.Add(new Stock() { StockSymbol = stock["symbol"], StockName = stock["description"] });
         }
-        if (showOnlyPopular)
-        {
-            string[] popular = _configuration.GetSection("TradingOptions")["Top25PopularStocks"].Split(',');
-            stockList = stockList.Where(p => popular.Contains(p.StockSymbol)).ToList();
-        }
+        string[] popular = _configuration.GetSection("TradingOptions")["Top25PopularStocks"].Split(',');
+        stockList = stockList.Where(p => popular.Contains(p.StockSymbol)).ToList();
+
         return stockList;
     }
 
@@ -55,8 +54,8 @@ public class FinnHubService : IFinnHubService
         {
             if (companyProfile.Count > 0)
             {
-                string p = priceQuote["c"].ToString().Replace('.', ',');
-                double price = double.Parse(p);
+                string p = priceQuote["c"].ToString();
+                double price = double.Parse(p, CultureInfo.InvariantCulture);
                 StockInfo stockTrade = new() { Price = price, StockSymbol = symbol, StockName = Convert.ToString(companyProfile["name"]), Industry = Convert.ToString(companyProfile["finnhubIndustry"]), WebUrl = Convert.ToString(companyProfile["weburl"]), Logo = Convert.ToString(companyProfile["logo"]) };
                 return stockTrade;
             }
@@ -68,7 +67,7 @@ public class FinnHubService : IFinnHubService
                 var data = JsonConvert.DeserializeObject<List<StockData>>(json);
                 var stock = data.FirstOrDefault(p => p.symbol == symbol);
                 string p = priceQuote["c"].ToString().Replace('.', ',');
-                double price = double.Parse(p);
+                double price = double.Parse(p, CultureInfo.InvariantCulture);
                 if (stock != null && data.Count > 0)
                 {
                     StockInfo stockTrade = new() { Price = price, StockSymbol = stock.symbol, StockName = stock.description };

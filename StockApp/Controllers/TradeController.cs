@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Rotativa.AspNetCore;
 using Rotativa.AspNetCore.Options;
 using StockApp.DTO;
@@ -8,9 +9,11 @@ using StockApp.Services;
 
 namespace StockApp.Controllers;
 
+[Route("[controller]")]
+[Authorize]
 [ModelValidationActionFilter]
-public class TradeController : Controller 
-{ 
+public class TradeController : Controller
+{
     private IFinnHubService _finnHubService;
     private IStockService _stockService;
     public TradeController(IFinnHubService finnHubService, IStockService stockService)
@@ -27,11 +30,12 @@ public class TradeController : Controller
         if (stockInfo != null)
             return View(stockInfo);
         else
-            return RedirectToAction(nameof(Index), new {symbol = "MSFT"});
+            return RedirectToAction(nameof(Index), new { symbol = "MSFT" });
     }
 
     [HttpPost]
     [Route("Buy")]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> BuyOrder(BuyOrderRequest buyOrder)
     {
         buyOrder.DateTime = DateTime.Now;
@@ -41,6 +45,7 @@ public class TradeController : Controller
 
     [HttpPost]
     [Route("Sell")]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> SellOrder(SellOrderRequest sellOrder)
     {
         sellOrder.DateTime = DateTime.Now;

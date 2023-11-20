@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.IdentityEntities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using StockApp.Model;
 
 namespace StockApp.DataBase;
 
-public class StockDbContext : DbContext
+public class StockDbContext : IdentityDbContext<ApplicationUser>
 {
     public StockDbContext(DbContextOptions<StockDbContext> options) : base(options)
     {
@@ -11,6 +14,7 @@ public class StockDbContext : DbContext
     }
     public DbSet<BuyOrder> BuyOrders { get; set; }
     public DbSet<SellOrder> SellOrders { get; set; }
+    public DbSet<ApplicationUser> AppUsers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -20,14 +24,17 @@ public class StockDbContext : DbContext
         modelBuilder.Entity<SellOrder>().Property(p => p.DateAndTimeOfOrder).IsRequired();
         modelBuilder.Entity<SellOrder>().Property(p => p.Quantity).IsRequired();
         modelBuilder.Entity<SellOrder>().Property(p => p.Price).IsRequired();
+        modelBuilder.Entity<SellOrder>().Property(p => p.StockSymbol).HasMaxLength(50);
+        modelBuilder.Entity<SellOrder>().Property(p => p.StockName).HasMaxLength(50);
+        modelBuilder.Entity<SellOrder>().HasOne(s => s.ApplicationUser).WithMany(u => u.SellOrders).HasForeignKey(s => s.UserId);
+
 
 
         modelBuilder.Entity<BuyOrder>().HasKey(buyOrder => buyOrder.BuyOrderId);
+        modelBuilder.Entity<BuyOrder>().Property(p => p.StockSymbol).HasMaxLength(50);
+        modelBuilder.Entity<BuyOrder>().Property(p => p.StockName).HasMaxLength(50);
+        modelBuilder.Entity<BuyOrder>().HasOne(b => b.ApplicationUser).WithMany(u => u.BuyOrders).HasForeignKey(b => b.UserId);
 
-    }
-
-    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
-    {
-        configurationBuilder.Properties<string>().HaveMaxLength(100);
+        base.OnModelCreating(modelBuilder);
     }
 }

@@ -16,14 +16,16 @@
             <div class=" navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="trade" asp-action="index">Main</a>
+                        <a class="nav-link" asp-controller="home" asp-action="index">Main</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="trade" asp-action="index">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="trade" asp-action="orders">Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="stocks" asp-action="explore">Explore</a>
+                        <a class="nav-link true-checkbox" asp-controller="stocks" asp-action="explore">Explore</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="trade" asp-action="orderstopdf">Download all orders as PDF</a>
@@ -31,10 +33,33 @@
 
                 </ul>
             </div>
-            <form class="d-flex" role="search" action="/Stocks/search">
-                <input class="form-control me-2" type="search" name="symbol" placeholder="Search by symbol" aria-label="Search" required>
-                <button class="btn btn-success" type="submit" >Search</button>
-            </form>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="user" asp-action="profile" asp-area="user">@User.Identity.Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="account" asp-action="logout">Log Out</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" asp-controller="stocks" asp-action="search">
+                    <input class="form-control me-2" type="search" name="symbol" placeholder="Search by symbol" aria-label="Search" required>
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+
+            }
+            else
+            {
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="account" asp-action="signup">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="account" asp-action="signin">Sign In</a>
+                    </li>
+                </ul>
+            }
         </div>
     </nav>
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="m-3">
@@ -44,8 +69,18 @@
         </ol>
     </nav>
     @RenderBody()
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/SimpleScript.js"></script>
     @RenderSection("script", false)
+    <script>
+        $('.true-checkbox').click(function () {
+            localStorage.setItem('myCheckboxState', true);
+        });
+    </script>
+
 </body>
 
 </html>

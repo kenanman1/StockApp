@@ -7,7 +7,7 @@
     @foreach (var item in ViewBag.AllStocks)
     {
             <div class="bg-white multi-column-item ">
-                <p class="p-1"><strong><a href="@item.StockSymbol">@item.StockName</a></strong> <br>@item.StockSymbol</p>
+                <p class="p-1"><strong><a href="/Stocks/Exploresymbol/@item.StockSymbol">@item.StockName</a></strong> <br>@item.StockSymbol</p>
             </div>
     }
     </div>

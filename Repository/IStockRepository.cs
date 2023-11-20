@@ -8,7 +8,7 @@ public interface IStockRepository
 
     Task<SellOrder> CreateSellOrderAsync(SellOrder sellOrder);
 
-    Task<List<BuyOrder>> GetBuyOrdersAsync();
+    Task<List<BuyOrder>> GetBuyOrdersAsync(string? userId = null);
 
-    Task<List<SellOrder>> GetSellOrdersAsync();
+    Task<List<SellOrder>> GetSellOrdersAsync(string? userId = null);
 }

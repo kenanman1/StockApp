@@ -10,13 +10,12 @@ p a {
     text-decoration: none;
 }
 
-#explore-info p{
+#explore-info p {
     word-wrap: break-word;
 }
 
 #multi-column-container {
     margin-left: 100px;
-    width: 1000px;
 }
 
 #price {
@@ -31,6 +30,14 @@ p a {
 #buy-orders {
     width: 500px;
     margin-bottom: 20px;
+}
+
+.form-check {
+    margin-left: 110px;
+}
+
+.img-signup{
+    height:500px;
 }
 
 @media(min-width:1259px) {
@@ -137,13 +144,19 @@ p a {
         margin-top: 50px;
         width: 90%;
     }
+
 }
 
-@media(max-width:450px){
+@media(max-width:450px) {
     #explore-info {
         margin-left: 33px;
     }
+
     #multi-column-container {
         margin-left: 33px;
+    }
+
+    .img-signup {
+        height: 400px;
     }
 }

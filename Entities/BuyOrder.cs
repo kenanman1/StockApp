@@ -1,4 +1,5 @@
-﻿using StockApp.DTO;
+﻿using Entities.IdentityEntities;
+using StockApp.DTO;
 using System.ComponentModel.DataAnnotations;
 
 namespace StockApp.Model;
@@ -22,6 +23,9 @@ public class BuyOrder
     [Required]
     [Range(0.01, 1000000)]
     public double Price { get; set; }
+
+    public ApplicationUser ApplicationUser { get; set; }
+    public string UserId { get; set; }
 
     public static BuyOrder ToBuyOrder(BuyOrderRequest request)
     {

@@ -25,10 +25,11 @@ public class StocksController : Controller
     [Route("[action]/{symbol}")]
     public async Task<IActionResult> ExploreSymbol(string symbol)
     {
-        List<Stock> allStocks = await _finnHubService.GetStocks(true);
+        List<Stock> allStocks = await _finnHubService.GetStocks();
         ViewBag.AllStocks = allStocks;
 
-        StockInfo ?stockInfo = await _finnHubService.GetStockInfo(symbol);
+        StockInfo? stockInfo = await _finnHubService.GetStockInfo(symbol);
+
         if (stockInfo != null)
             return View(stockInfo);
         else
@@ -46,4 +47,3 @@ public class StocksController : Controller
             return RedirectToAction(nameof(TradeController.Index), "Trade", new { symbol = "MSFT" });
     }
 }
-

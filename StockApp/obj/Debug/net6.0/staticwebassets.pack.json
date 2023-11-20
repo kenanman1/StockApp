@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
     },
     {
+      "Id": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\SimpleScript.js",
+      "PackagePath": "staticwebassets\\SimpleScript.js"
+    },
+    {
       "Id": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },

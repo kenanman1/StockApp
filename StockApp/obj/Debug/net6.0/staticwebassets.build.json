@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+7h2znUjq4ASA28UCfAmxKePhg7VLy/4BMYwiG+60cU=",
+  "Hash": "7cA2vOKRQ/0p2Mff10fgcMIZ0WA1D3xZ17LcUYlvstI=",
   "Source": "StockApp",
   "BasePath": "_content/StockApp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\SimpleScript.js",
+      "SourceId": "StockApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\",
+      "BasePath": "_content/StockApp",
+      "RelativePath": "SimpleScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\SimpleScript.js"
     },
     {
       "Identity": "C:\\Users\\USER\\source\\repos\\StockApp\\StockApp\\wwwroot\\StyleSheet.css",

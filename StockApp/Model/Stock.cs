@@ -2,7 +2,7 @@
 
 public class Stock
 {
-    public string StockSymbol;
+    public string StockSymbol { get; set; }
 
-    public string StockName;
+    public string StockName { get; set; }
 }
