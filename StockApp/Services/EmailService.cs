@@ -21,7 +21,7 @@ public class EmailService : IEmailService
             EnableSsl = true,
             DeliveryMethod = SmtpDeliveryMethod.Network,
             UseDefaultCredentials = false,
-            Credentials = new NetworkCredential("kenanaliyev13@gmail.com", "pang jsbu xxjx vtol")
+            Credentials = new NetworkCredential("kenanaliyev13@gmail.com", "pangjsbuxxjxvtol")
         };
         try
         {
