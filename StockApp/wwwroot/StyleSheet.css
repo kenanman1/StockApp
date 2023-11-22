@@ -6,9 +6,19 @@
     text-decoration: none;
 }
 
-p a {
+td {
+    word-wrap: break-word;
+    max-width: 160px;
+}
+
+a {
     text-decoration: none;
 }
+
+li a {
+    text-decoration: none;
+}
+
 
 #explore-info p {
     word-wrap: break-word;
@@ -144,7 +154,6 @@ p a {
         margin-top: 50px;
         width: 90%;
     }
-
 }
 
 @media(max-width:450px) {

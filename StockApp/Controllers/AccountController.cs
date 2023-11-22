@@ -33,7 +33,6 @@ public class AccountController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> SignUp(SignUpViewModel model)
     {
-        await CreateRoles();
         if (ModelState.IsValid)
         {
             var user = new ApplicationUser
@@ -51,7 +50,7 @@ public class AccountController : Controller
                 {
                     await _userManager.AddToRoleAsync(user, "Admin");
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Trade");
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
                 await _userManager.AddToRoleAsync(user, "User");
                 await _signInManager.SignInAsync(user, isPersistent: false);
@@ -110,13 +109,5 @@ public class AccountController : Controller
             return Json(true);
         else
             return Json(false);
-    }
-
-    private async Task CreateRoles()
-    {
-        if (!await _roleManager.RoleExistsAsync("Admin"))
-            await _roleManager.CreateAsync(new IdentityRole("Admin"));
-        if (!await _roleManager.RoleExistsAsync("User"))
-            await _roleManager.CreateAsync(new IdentityRole("User"));
     }
 }

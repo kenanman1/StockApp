@@ -41,7 +41,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/SignIn";
-    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.AccessDeniedPath = "/AccessDenied";
 });
 builder.Host.UseSerilog((context, configuration) =>
 {

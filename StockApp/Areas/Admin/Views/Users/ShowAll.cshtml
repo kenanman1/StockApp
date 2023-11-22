@@ -1,0 +1,43 @@
+﻿@model IndexViewModel
+<div class="d-flex flex-column align-items-center">
+    <table class="table table-primary table-striped table-hover my-table w-75 mt-5 table-bordered">
+        <thead class="table-secondary">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Total Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td class="align-middle">@user.FirstName</td>
+                    <td class="align-middle">@user.LastName</td>
+                    <td class="align-middle">@user.Email</td>
+                    <td class="align-middle">@user.TotalOperationsCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="btn-toolbar mt-3" role="toolbar">
+        <div class="btn-group me-2" role="group">
+            @for (int i = 1; i <= Model.PageViewModel.TotalPages; i++)
+            {
+                @if (i == Model.PageViewModel.PageNumber)
+                {
+                    <a asp-controller="users" asp-action="showall" asp-route-page="@(i)" class="btn btn-primary">
+                        @i
+                    </a>
+                }
+                else
+                {
+                    <a asp-controller="users" asp-action="showall" asp-route-page="@(i)" class="btn btn-outline-primary">
+                        @i
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>

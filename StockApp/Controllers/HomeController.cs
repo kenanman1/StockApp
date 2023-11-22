@@ -19,4 +19,10 @@ public class HomeController : Controller
         else
             return RedirectToAction("Index", "Trade");
     }
+
+    [Route("/AccessDenied")]
+    public IActionResult AccessDenied()
+    {
+        return View();
+    }
 }

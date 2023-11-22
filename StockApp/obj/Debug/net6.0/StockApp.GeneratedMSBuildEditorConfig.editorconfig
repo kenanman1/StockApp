@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\USER\source\repos\StockApp\StockApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/USER/source/repos/StockApp/StockApp/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/StockApp/StockApp/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/StockApp/StockApp/Areas/Admin/Views/Users/ShowAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcU2hvd0FsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/StockApp/StockApp/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/StockApp/StockApp/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/USER/source/repos/StockApp/StockApp/Areas/User/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xVc2VyXFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/USER/source/repos/StockApp/StockApp/Views/Account/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/StockApp/StockApp/Views/Home/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/USER/source/repos/StockApp/StockApp/Views/Home/Error.cshtml]

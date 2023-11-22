@@ -16,6 +16,8 @@ public class ApplicationUser : IdentityUser
 
     public DateTimeOffset Created { get; set; }
 
+    //public decimal Profit { get; set; }
+
     public virtual ICollection<BuyOrder> BuyOrders { get; set; }
     public virtual ICollection<SellOrder> SellOrders { get; set; }
 }

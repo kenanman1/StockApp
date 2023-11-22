@@ -36,6 +36,12 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <ul class="navbar-nav">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="home" asp-action="index" asp-area="admin">Admin Panel</a>
+                        </li>
+                    }
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="user" asp-action="profile" asp-area="user">@User.Identity.Name</a>
                     </li>
@@ -64,23 +70,16 @@
     </nav>
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="m-3">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="trade" asp-action="index">Home</a></li>
             @RenderSection("Breadcrumb", false)
         </ol>
     </nav>
     @RenderBody()
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="~/SimpleScript.js"></script>
     @RenderSection("script", false)
-    <script>
-        $('.true-checkbox').click(function () {
-            localStorage.setItem('myCheckboxState', true);
-        });
-    </script>
-
 </body>
 
 </html>

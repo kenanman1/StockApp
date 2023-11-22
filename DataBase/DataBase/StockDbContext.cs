@@ -18,6 +18,10 @@ public class StockDbContext : IdentityDbContext<ApplicationUser>
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        var roleAdmin = new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" };
+        var roleUser = new IdentityRole { Name = "User", NormalizedName = "USER" };
+        modelBuilder.Entity<IdentityRole>().HasData(roleAdmin, roleUser);
+
         modelBuilder.Entity<SellOrder>().HasKey(sellOrder => sellOrder.SellOrderId);
         modelBuilder.Entity<SellOrder>().Property(p => p.StockSymbol).IsRequired();
         modelBuilder.Entity<SellOrder>().Property(p => p.StockName).IsRequired();
