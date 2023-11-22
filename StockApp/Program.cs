@@ -14,6 +14,7 @@ builder.Services.AddScoped<IFinnHubService, FinnHubService>();
 builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<IFinnHubRepository, FinnHubRepository>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddAuthorization(p =>
 {
     p.AddPolicy("NotAuthorized", opt =>
@@ -37,6 +38,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.Password.RequireUppercase = false;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequiredUniqueChars = 1;
+    options.SignIn.RequireConfirmedEmail = true;
 }).AddEntityFrameworkStores<StockDbContext>().AddDefaultTokenProviders();
 builder.Services.ConfigureApplicationCookie(options =>
 {

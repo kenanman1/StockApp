@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StockApp.Model;
+using StockApp.Services;
 
 namespace StockApp.Controllers;
 
@@ -11,12 +12,12 @@ public class AccountController : Controller
 {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
-    private readonly RoleManager<IdentityRole> _roleManager;
-    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
+    private readonly IEmailService _emailService;
+    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailService emailService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
-        _roleManager = roleManager;
+        _emailService = emailService;
     }
 
     [Authorize("NotAuthorized")]
@@ -52,9 +53,14 @@ public class AccountController : Controller
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
-                await _userManager.AddToRoleAsync(user, "User");
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                return RedirectToAction("Index", "Trade");
+
+                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+
+                await _emailService.SendEmailAsync(model.Email, "Confirm your email",
+                    $"Please confirm your account by <a href='{callbackUrl}'>clicking here</a>.");
+
+                return View("EmailSent");
             }
             foreach (var error in result.Errors)
             {
@@ -62,6 +68,29 @@ public class AccountController : Controller
             }
         }
         return View(model);
+    }
+
+    [HttpGet]
+    [Authorize("NotAuthorized")]
+    [Route("[action]")]
+    public async Task<IActionResult> ConfirmEmail(string userId, string code)
+    {
+        if (userId == null || code == null)
+            return RedirectToAction("Error", "Home");
+
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+            return RedirectToAction("Error", "Home");
+
+        var result = await _userManager.ConfirmEmailAsync(user, code);
+        if (result.Succeeded)
+        {
+            await _userManager.AddToRoleAsync(user, "User");
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            return RedirectToAction("Index", "Trade");
+        }
+
+        return RedirectToAction("Error", "Home");
     }
 
     [Authorize("NotAuthorized")]
@@ -86,6 +115,13 @@ public class AccountController : Controller
                 if (!string.IsNullOrEmpty(ReturnUrl))
                     return LocalRedirect(ReturnUrl);
                 return RedirectToAction("Index", "Trade");
+            }
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null && !user.EmailConfirmed && await _userManager.CheckPasswordAsync(user, model.Password))
+            {
+                ModelState.AddModelError("Email", "Email not confirmed yet");
+                return View(model);
             }
             ModelState.AddModelError("Email", "Incorrect email or password");
         }

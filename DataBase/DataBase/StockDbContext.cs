@@ -32,8 +32,6 @@ public class StockDbContext : IdentityDbContext<ApplicationUser>
         modelBuilder.Entity<SellOrder>().Property(p => p.StockName).HasMaxLength(50);
         modelBuilder.Entity<SellOrder>().HasOne(s => s.ApplicationUser).WithMany(u => u.SellOrders).HasForeignKey(s => s.UserId);
 
-
-
         modelBuilder.Entity<BuyOrder>().HasKey(buyOrder => buyOrder.BuyOrderId);
         modelBuilder.Entity<BuyOrder>().Property(p => p.StockSymbol).HasMaxLength(50);
         modelBuilder.Entity<BuyOrder>().Property(p => p.StockName).HasMaxLength(50);

@@ -21,7 +21,7 @@ public class UsersController : Controller
     [Route("[action]")]
     public async Task<IActionResult> ShowAll(int page = 1)
     {
-        int pageSize = 5;
+        int pageSize = 10;
 
         List<ApplicationUser> applicationUsers = await _userManager.Users.ToListAsync();
         List<UserViewModel> users = new();
