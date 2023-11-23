@@ -66,7 +66,7 @@ public class FinnHubService : IFinnHubService
                 string json = companyProfile1["result"].ToString();
                 var data = JsonConvert.DeserializeObject<List<StockData>>(json);
                 var stock = data.FirstOrDefault(p => p.Symbol == symbol);
-                string p = priceQuote["c"].ToString().Replace('.', ',');
+                string p = priceQuote["c"].ToString();
                 double price = double.Parse(p, CultureInfo.InvariantCulture);
                 if (stock != null && data.Count > 0)
                 {
