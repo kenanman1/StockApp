@@ -65,12 +65,12 @@ public class FinnHubService : IFinnHubService
                 Dictionary<string, object> companyProfile1 = await SearchStock(symbol);
                 string json = companyProfile1["result"].ToString();
                 var data = JsonConvert.DeserializeObject<List<StockData>>(json);
-                var stock = data.FirstOrDefault(p => p.symbol == symbol);
+                var stock = data.FirstOrDefault(p => p.Symbol == symbol);
                 string p = priceQuote["c"].ToString().Replace('.', ',');
                 double price = double.Parse(p, CultureInfo.InvariantCulture);
                 if (stock != null && data.Count > 0)
                 {
-                    StockInfo stockTrade = new() { Price = price, StockSymbol = stock.symbol, StockName = stock.description };
+                    StockInfo stockTrade = new() { Price = price, StockSymbol = stock.Symbol, StockName = stock.Description };
                     return stockTrade;
                 }
                 else

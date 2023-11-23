@@ -29,7 +29,7 @@ public class EmailService : IEmailService
         }
         catch (Exception ex)
         {
-            
+
         }
     }
 }

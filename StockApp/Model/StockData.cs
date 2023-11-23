@@ -2,7 +2,7 @@
 
 public class StockData
 {
-    public string description { get; set; }
-    public string symbol { get; set; }
-    public string type { get; set; }
+    public string Description { get; set; }
+    public string Symbol { get; set; }
+    public string Type { get; set; }
 }

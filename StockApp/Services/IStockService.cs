@@ -6,7 +6,7 @@ public interface IStockService
 {
     Task<BuyOrderResponse> CreateBuyOrderAsync(BuyOrderRequest? buyOrderRequest);
 
-    Task<SellOrderResponse> CreateSellOrderAsync(SellOrderRequest? sellOrderRequest); 
+    Task<SellOrderResponse> CreateSellOrderAsync(SellOrderRequest? sellOrderRequest);
 
     Task<List<BuyOrderResponse>> GetBuyOrdersAsync();
 

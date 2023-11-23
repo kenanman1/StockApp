@@ -33,7 +33,7 @@ function connectWebSocket() {
                 console.log(eventData.data);
                 var updatedPrice = JSON.parse(event.data).data[0].p;
                 console.log(updatedPrice);
-                currentPrice = updatedPrice; 
+                currentPrice = updatedPrice;
                 price.text(updatedPrice);
             }
         }

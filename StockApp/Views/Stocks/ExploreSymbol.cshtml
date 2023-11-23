@@ -4,12 +4,12 @@
 }
 <div class="d-flex justify-content-center w-75 flex" id="explore">
     <div class="container  border border-3 rounded-3 mb-3 p-3" id="multi-column-container">
-    @foreach (var item in ViewBag.AllStocks)
-    {
+        @foreach (var item in ViewBag.AllStocks)
+        {
             <div class="bg-white multi-column-item ">
                 <p class="p-1"><strong><a href="/Stocks/Exploresymbol/@item.StockSymbol">@item.StockName</a></strong> <br>@item.StockSymbol</p>
             </div>
-    }
+        }
     </div>
     <div class="border border-3 rounded-3 d-flex flex-column align-items-center justify-content-center mb-3" id="explore-info">
         <img class="p-3 company-logo" src="@Model.Logo" />

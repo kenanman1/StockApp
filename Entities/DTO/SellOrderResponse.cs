@@ -7,10 +7,10 @@ public class SellOrderResponse
     public Guid Guid { get; set; }
     public string StockSymbol { get; set; }
     public string StockName { get; set; }
-    public DateTime DateTime { get; set;}
+    public DateTime DateTime { get; set; }
     public int Quantity { get; set; }
     public double Price { get; set; }
-    public double TradeAmount { get; set;}
+    public double TradeAmount { get; set; }
 
     public static SellOrderResponse ToSellOrderResponce(SellOrder order)
     {

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StockApp.Areas.Admin.Models;
-using System.Linq;
 
 namespace StockApp.Areas.Admin.Controllers;
 
