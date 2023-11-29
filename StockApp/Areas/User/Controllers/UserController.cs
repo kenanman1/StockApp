@@ -9,7 +9,6 @@ namespace StockApp.Areas.User.Controllers;
 [Area("User")]
 [Route("[area]")]
 [Authorize]
-
 public class UserController : Controller
 {
     private UserManager<ApplicationUser> _userManager;

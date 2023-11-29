@@ -3,10 +3,9 @@
     <div class="row">
         <div class="col-md-6 border-end border-3 d-flex flex-column justify-content-center align-items-center" id="div-index">
             <h3 class="">@Model.StockName</h3>
-
             <span id="price">@Model.Price</span>
-
         </div>
+
         <div class="mt-5 col-md-6 d-flex flex-column justify-content-center align-items-center">
             <div class="column">
                 <span class="text-secondary">New Order</span>
@@ -20,8 +19,8 @@
                         <input type="hidden" asp-for="Price" value="@Model.Price" />
                         <div style="display:block;">
 
-                            <button type="submit" asp-controller="trade" asp-action="sellorder" class="btn btn-danger mt-2">Sell</button>
-                            <button type="submit" asp-controller="trade" asp-action="buyorder" class="btn btn-success mt-2">Buy</button>
+                            <button type="submit" asp-controller="trade" asp-action="@nameof(TradeController.SellOrder)" class="btn btn-danger mt-2">Sell</button>
+                            <button type="submit" asp-controller="trade" asp-action="@nameof(TradeController.BuyOrder)" class="btn btn-success mt-2">Buy</button>
                         </div>
                     </form>
                 </div>

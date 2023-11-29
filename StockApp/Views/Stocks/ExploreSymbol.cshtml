@@ -17,6 +17,6 @@
         <p class="p-3 bg-secondary text-white rounded-3" style="margin-left:13px; width:200px;">Industry: @Model.Industry</p>
         <p class="p-3" style="font-size:larger"><strong>$ @Model.Price</strong></p>
         <p class="p-3"><a href="@Model.WebUrl" target="_blank">@Model.WebUrl</a></p>
-        <a class="btn btn-success" style="margin-left:15px;" asp-controller="trade" asp-action="index" asp-route-symbol="@Model.StockSymbol">Trade</a>
+        <a class="btn btn-success" style="margin-left:15px;" asp-controller="trade" asp-action="@nameof(TradeController.Index)" asp-route-symbol="@Model.StockSymbol">Trade</a>
     </div>
 </div>

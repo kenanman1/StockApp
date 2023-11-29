@@ -10,7 +10,7 @@
 
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
 
-                                <form class="mx-1 mx-md-4" method="post" asp-controller="account" asp-action="signin" asp-route-ReturnUrl="@Context.Request.Query["ReturnUrl"]">
+                                <form class="mx-1 mx-md-4" method="post" asp-controller="account" asp-action="@nameof(AccountController.SignIn)" asp-route-ReturnUrl="@Context.Request.Query["ReturnUrl"]">
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>

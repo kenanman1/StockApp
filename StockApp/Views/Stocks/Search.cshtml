@@ -3,7 +3,7 @@
     <li class="breadcrumb-item active mb-3" aria-current="page">Search</li>
 }
 <div class="search-info border border-3 rounded-3 d-flex flex-column align-items-center justify-content-center mb-3">
-    <form asp-controller="trade" asp-action="index" asp-route-symbol="@Model.StockSymbol">
+    <form asp-controller="trade" asp-action="@nameof(TradeController.Index)" asp-route-symbol="@Model.StockSymbol">
         <img class="p-4 company-logo" src="@Model.Logo" />
         <p class="p-4"><strong>@Model.StockName (@Model.StockSymbol)</strong></p>
         <p class="p-4 bg-secondary text-white rounded-3" style="margin-left:22px; width:200px;">Industry: @Model.Industry</p>

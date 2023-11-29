@@ -16,19 +16,19 @@
             <div class=" navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="home" asp-action="index">Main</a>
+                        <a class="nav-link" asp-controller="home" asp-action="@nameof(HomeController.Index)">Main</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="trade" asp-action="index">Home</a>
+                        <a class="nav-link" asp-controller="trade" asp-action="@nameof(TradeController.Index)">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="trade" asp-action="orders">Orders</a>
+                        <a class="nav-link" asp-controller="trade" asp-action="@nameof(TradeController.Orders)">Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link true-checkbox" asp-controller="stocks" asp-action="explore">Explore</a>
+                        <a class="nav-link true-checkbox" asp-controller="stocks" asp-action="@nameof(StocksController.Explore)">Explore</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="trade" asp-action="orderstopdf">Download all orders as PDF</a>
+                        <a class="nav-link" asp-controller="trade" asp-action="@nameof(TradeController.OrdersToPdf)">Download all orders as PDF</a>
                     </li>
 
                 </ul>
@@ -39,17 +39,17 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="home" asp-action="index" asp-area="admin">Admin Panel</a>
+                            <a class="nav-link" asp-controller="home" asp-action="@nameof(StockApp.Areas.Admin.Controllers.HomeController.Index)" asp-area="admin">Admin Panel</a>
                         </li>
                     }
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="user" asp-action="profile" asp-area="user">@User.Identity.Name</a>
+                        <a class="nav-link" asp-controller="user" asp-action="@nameof(StockApp.Areas.User.Controllers.UserController.Profile)" asp-area="user">@User.Identity.Name</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="account" asp-action="logout">Log Out</a>
+                        <a class="nav-link" asp-controller="account" asp-action="@nameof(AccountController.Logout)">Log Out</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search" asp-controller="stocks" asp-action="search">
+                <form class="d-flex" role="search" asp-controller="stocks" asp-action="@nameof(StocksController.Search)">
                     <input class="form-control me-2" type="search" name="symbol" placeholder="Search by symbol" aria-label="Search" required>
                     <button class="btn btn-success" type="submit">Search</button>
                 </form>
@@ -59,10 +59,10 @@
             {
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="account" asp-action="signup">Sign Up</a>
+                        <a class="nav-link" asp-controller="account" asp-action="@nameof(AccountController.SignUp)">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="account" asp-action="signin">Sign In</a>
+                        <a class="nav-link" asp-controller="account" asp-action="@nameof(AccountController.SignIn)">Sign In</a>
                     </li>
                 </ul>
             }
@@ -70,7 +70,7 @@
     </nav>
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="m-3">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a asp-controller="trade" asp-action="index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="trade" asp-action="@nameof(TradeController.Index)">Home</a></li>
             @RenderSection("Breadcrumb", false)
         </ol>
     </nav>
