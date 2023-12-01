@@ -15,6 +15,7 @@ public class FinnHubService : IFinnHubService
         _finnhubRepository = finnhubRepository;
         _configuration = configuration;
     }
+
     public async Task<Dictionary<string, object>> GetCompanyProfile(string? stockSymbol = null)
     {
         return await _finnhubRepository.GetCompanyProfile(stockSymbol);

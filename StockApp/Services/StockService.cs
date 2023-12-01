@@ -18,6 +18,7 @@ public class StockService : IStockService
         _dbContext = dbContext;
         _httpContextAccessor = httpContextAccessor;
     }
+
     public async Task<BuyOrderResponse> CreateBuyOrderAsync(BuyOrderRequest? buyOrderRequest)
     {
         if (buyOrderRequest == null)
@@ -60,13 +61,13 @@ public class StockService : IStockService
         List<BuyOrder> buyOrders = await _dbContext.GetBuyOrdersAsync(user.Id);
         return buyOrders.Select(buyOrder => BuyOrderResponse.ToBuyOrderResponce(buyOrder)).ToList();
     }
+
     public async Task<List<SellOrderResponse>> GetSellOrdersAsync()
     {
         ApplicationUser user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
         List<SellOrder> sellOrders = await _dbContext.GetSellOrdersAsync(user.Id);
         return sellOrders.Select(sellOrder => SellOrderResponse.ToSellOrderResponce(sellOrder)).ToList();
     }
-
 
     public void CheckValidation(object obj)
     {
@@ -78,4 +79,3 @@ public class StockService : IStockService
         }
     }
 }
-

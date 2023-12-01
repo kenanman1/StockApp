@@ -12,11 +12,12 @@ namespace StockApp.Areas.Admin.Controllers;
 [Authorize(Roles = "Admin")]
 public class UsersController : Controller
 {
-    private readonly UserManager<ApplicationUser> _userManager;
+    private UserManager<ApplicationUser> _userManager;
     public UsersController(UserManager<ApplicationUser> userManager)
     {
         _userManager = userManager;
     }
+
     [Route("[action]")]
     public async Task<IActionResult> ShowAll(int page = 1)
     {

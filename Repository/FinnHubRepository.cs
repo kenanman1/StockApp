@@ -5,21 +5,20 @@ namespace Repository;
 
 public class FinnHubRepository : IFinnHubRepository
 {
-    private IHttpClientFactory HttpClientFactory;
-    private IConfiguration configuration;
+    private IHttpClientFactory _httpClientFactory;
+    private IConfiguration _configuration;
     public FinnHubRepository(IHttpClientFactory factory, IConfiguration configuration)
     {
-        HttpClientFactory = factory;
-        this.configuration = configuration;
-
+        _httpClientFactory = factory;
+        _configuration = configuration;
     }
+
     public async Task<Dictionary<string, object>> GetCompanyProfile(string? stockSymbol = null)
     {
         if (stockSymbol == null)
-        {
-            stockSymbol = configuration.GetSection("TradingOptions")["DefaultStockSymbol"];
-        }
-        HttpClient client = HttpClientFactory.CreateClient();
+            stockSymbol = _configuration.GetSection("TradingOptions")["DefaultStockSymbol"];
+
+        HttpClient client = _httpClientFactory.CreateClient();
         HttpRequestMessage requestMessage = new() { Method = HttpMethod.Get, RequestUri = new Uri($"https://finnhub.io/api/v1/stock/profile2?symbol={stockSymbol}&token=cjh5fopr01qu5vpthpq0cjh5fopr01qu5vpthpqg") };
         HttpResponseMessage message = await client.SendAsync(requestMessage);
         if (message.IsSuccessStatusCode)
@@ -35,10 +34,9 @@ public class FinnHubRepository : IFinnHubRepository
     public async Task<Dictionary<string, object>> GetStockPriceQuote(string? stockSymbol = null)
     {
         if (stockSymbol == null)
-        {
-            stockSymbol = configuration.GetSection("TradingOptions")["DefaultStockSymbol"];
-        }
-        HttpClient client = HttpClientFactory.CreateClient();
+            stockSymbol = _configuration.GetSection("TradingOptions")["DefaultStockSymbol"];
+
+        HttpClient client = _httpClientFactory.CreateClient();
         HttpRequestMessage httpRequest = new() { Method = HttpMethod.Get, RequestUri = new Uri($"https://finnhub.io/api/v1/quote?symbol={stockSymbol}&token=cjh5fopr01qu5vpthpq0cjh5fopr01qu5vpthpqg") };
         HttpResponseMessage message = await client.SendAsync(httpRequest);
         if (message.IsSuccessStatusCode)
@@ -53,7 +51,7 @@ public class FinnHubRepository : IFinnHubRepository
 
     public async Task<List<Dictionary<string, string>>> GetStocks()
     {
-        HttpClient client = HttpClientFactory.CreateClient();
+        HttpClient client = _httpClientFactory.CreateClient();
 
         HttpRequestMessage httpRequest = new() { Method = HttpMethod.Get, RequestUri = new Uri("https://finnhub.io/api/v1/stock/symbol?exchange=US&token=cjh5fopr01qu5vpthpq0cjh5fopr01qu5vpthpqg") };
 
@@ -70,8 +68,7 @@ public class FinnHubRepository : IFinnHubRepository
 
     public async Task<Dictionary<string, object>> SearchStock(string symbol)
     {
-
-        HttpClient client = HttpClientFactory.CreateClient();
+        HttpClient client = _httpClientFactory.CreateClient();
         HttpRequestMessage httpRequest = new() { Method = HttpMethod.Get, RequestUri = new Uri($"https://finnhub.io/api/v1/search?q={symbol}&token=cjh5fopr01qu5vpthpq0cjh5fopr01qu5vpthpqg") };
 
         HttpResponseMessage message = await client.SendAsync(httpRequest);
